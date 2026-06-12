@@ -7,6 +7,7 @@ This project is an **end-to-end data engineering pipeline** built using **PySpar
 It processes ride data from raw ingestion to analytics-ready datasets, enabling business insights such as customer behavior, driver performance, and daily metrics.
 
 ##Architecture
+![Ride Analytics Architecture](docs/architecture.png)
 
 ```
 Bronze Layer (Raw Ingestion - PySpark)
@@ -63,8 +64,11 @@ Gold Layer (Analytics - dbt Models & Views)
 ## Key Features
 
 - ✅ Incremental data processing
+  ![Incremental Model](docs/incremental_model.png)
 - ✅ Change Data Capture (CDC) handling
+  ![CDC MERGE](docs/cdc_merge.png)
 - ✅ Slowly Changing Dimensions (SCD Type 2)
+  ![SCD Type 2](docs/SCD2.png)
 - ✅ Modular dbt models
 - ✅ Layered architecture (Bronze → Silver → Gold)
 - ✅ Scalable and production-style pipeline
