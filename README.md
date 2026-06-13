@@ -2,11 +2,25 @@
 
 ## Overview
 
-This project is an **end-to-end data engineering pipeline** built using **PySpark (Databricks)** and **dbt**, implementing a modern **Lakehouse architecture**.
+This project is an **end-to-end data engineering pipeline** for a ride-sharing platform built using **PySpark (Databricks)** and **dbt**
 
-It processes ride data from raw ingestion to analytics-ready datasets, enabling business insights such as customer behavior, driver performance, and daily metrics.
+The project follows a Bronze → Silver → Gold Medallion Architecture, demonstrating production-style ETL design, incremental processing, Slowly Changing Dimensions (SCD Type 2), and modular analytics engineering practices.
 
-##Architecture
+## Business Problem
+
+Ride-sharing platforms generate large volumes of transactional data across customers, drivers, vehicles, trips, locations, and payments.
+
+Business teams require reliable and analytics-ready datasets to answer questions such as:
+
+Which customers take the most trips?
+Which drivers have the highest performance?
+What are the daily operational metrics?
+How does customer and driver information change over time?
+
+This project transforms raw operational data into trusted analytical datasets while preserving historical changes and supporting scalable incremental processing.
+
+## Architecture
+
 ![Ride Analytics Architecture](docs/architecture.png)
 
 ```
@@ -106,8 +120,14 @@ ride-analytics-lakehouse/
 │   │
 │   └── dbt_project.yml
 │
-├── .gitignore
-└── README.md
+├── docs/
+│ ├── architecture.png
+│ ├── cdc_merge.png
+│ ├── incremental_model.png
+│ └── SCD2.png
+│
+├── README.md
+└── .gitignore
 ```
 
 ## How to Run
@@ -145,7 +165,7 @@ dbt test
 
 - Add orchestration (Airflow / Databricks Jobs)
 - Implement CI/CD pipelines
-- Add data quality tests
+- Extended dbt data quality tests
 - Integrate dashboards (Power BI / Tableau)
 
 ## Author
