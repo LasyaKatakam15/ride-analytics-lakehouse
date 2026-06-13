@@ -21,7 +21,7 @@ This project transforms raw operational data into trusted analytical datasets wh
 
 ## Architecture
 
-![Ride Analytics Architecture](docs/architecture.png)
+![Ride Analytics Architecture](docs/Architecture.png)
 
 ```
 Bronze Layer (Raw Ingestion - PySpark)
